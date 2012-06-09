@@ -1,0 +1,114 @@
+a:hover {
+    text-decoration: none;
+}
+
+.blue-well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #DEFEFF;
+  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#new-post-btn {
+    display: block;
+    height: 8px;
+    background: #56B3C7; 
+    margin: 5px 5px 0; 
+    padding: 5px 7px 14px 7px; 
+    border-radius: 8px; 
+    text-shadow: 0px 0px 7px #000000; 
+    color: #FFFFFF;
+    border-color: #51a351 #51a351 #387038;
+}
+
+#new-post-btn:hover {
+  /*text-shadow: 0.1em 0.1em 0.1em #A9DEF9;*/
+  box-shadow: -1px 0.1em 1em #A9DEF9;
+}
+#new-post-btn:active {
+    background: #5BA5B7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#edit-post-btn {
+    display: block;
+    height: 8px;
+    color: #F3F4F3;
+    background: #1BAD11; 
+    margin: 5px 5px 0; 
+    padding: 5px 7px 14px 7px; 
+    border-radius: 8px; 
+    text-shadow: 0px 0px 7px #000000; 
+    border-color: #51a351 #51a351 #387038;
+}
+
+#edit-post-btn:hover {
+  box-shadow: -1px 0.1em 1em #BCF9A9; 
+}
+#edit-post-btn:active {
+    background: #5bb75b;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#edit-post-btn-disabled {
+    display: block;
+    height: 8px;
+    color: #4B4B4B;
+    background: #9AA398; 
+    margin: 5px 5px 0; 
+    padding: 5px 7px 14px 7px; 
+    border-radius: 8px; 
+    
+}
+
+#delete-post-btn {
+    display: block;
+    height: 8px;
+    color: #F3F4F3;
+    background: #AA2323; 
+    margin: 5px 5px 0; 
+    padding: 5px 7px 14px 7px; 
+    border-radius: 8px; 
+    text-shadow: 0px 0px 7px #000000; 
+    border-color: #51a351 #51a351 #387038;
+}
+
+#delete-post-btn:hover {
+  box-shadow: -1px 0.1em 1em #F9B9A9; 
+}
+#delete-post-btn:active {
+    background: #DC1013;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#delete-post-btn-disabled {
+    display: block;
+    height: 8px;
+    color: #4B4B4B;
+    background: #9AA398; 
+    margin: 5px 5px 0; 
+    padding: 5px 7px 14px 7px; 
+    border-radius: 8px; 
+    
+}
+
+#post_in {
+	width: 40em;
+	height: 25em;
+	resize: none;
+}
+
+#title_in {
+	width: 40em;
+}
+
+#cmnt_name_in{
+  width: 40em;
+}
+
+#cmnt_in{
+  width: 40em;
+  resize: none;
+}
