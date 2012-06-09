@@ -12,6 +12,10 @@
 			while($row = mysql_fetch_assoc($comment_query)){
 				echo "<a name='".$row['comment_id']."'></a>";
 				echo "<h3>".$row['name']." said </h3>";
+				if (isset($_SESSION['auth'])) {
+					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?comment_id=";
+					echo $row['comment_id']."'>Delete</a>";
+				}
 				echo "<p class='comment'>".$row['comment']."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
 			}

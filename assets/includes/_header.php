@@ -10,12 +10,12 @@
 	<?php
 		if (strstr($_SERVER['SCRIPT_NAME'], 'admin')) {
 			echo '<link rel="stylesheet" type="text/css" href="../assets/custom-style.css">';
-			echo '<link rel="stylesheet" type="text/css" href="../assets/bootstrap.css">';
+			echo '<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.css">';
 			include_once '../assets/includes/_navbar.php';
 		}
 		else {
 		 echo '<link rel="stylesheet" type="text/css" href="assets/custom-style.css">';
-		 echo '<link rel="stylesheet" type="text/css" href="assets/bootstrap.css">';
+		 echo '<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">';
 		 include_once 'assets/includes/_navbar.php';
 		}
 	?>
