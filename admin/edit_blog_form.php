@@ -1,13 +1,16 @@
 <?php	include_once "../assets/includes/_header.php";
 
-//IF EDITING EXISTING POST THIS IF BLOCK IS EXECUTED
+//This file presents a form editing a post, or creating a new post. If editing a post, it fills the form with data of old post. If creating new post, it present a new empty form.
 
-	if (isset($_GET['id'])) {
+	//IF EDITING EXISTING POST THIS IF BLOCK IS EXECUTED
+	if (isset($_GET['id'])) {  //This block checks if $_GET has 'id' attribute. if it do, following block is executed
 		$id = $_GET['id'];
 		echo "<h2>Edit Blog Entry</h2><br>"; //if editing existing post, this is the header
 
-		$query = mysql_query("SELECT * FROM blog_posts WHERE id='$id'");
+		$query = mysql_query("SELECT * FROM blog_posts WHERE id='$id'"); //query to fetch data from database.
 		$row = mysql_fetch_assoc($query);
+
+		//below form fills the different fields in form with data fetched from database. Since we are editing an old post, it is needed to fill in previous data.
 	
 ?>
 		<form method="post" action="edit_blog.php?edit=<?php echo $id ?>">
@@ -38,8 +41,10 @@
 
 <?php
 	}
+
+	//Following block is executed if creating a new post
 	else {
-		echo "<h2>New Blog Entry</h2><br>";	//if editing old post, this is the header
+		echo "<h2>New Blog Entry</h2><br>";	//if creating new post, this is the header
 
 ?>
 

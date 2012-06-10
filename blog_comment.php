@@ -5,7 +5,7 @@
 			echo "<h2>Comments</h2>";
 			echo "<div class='well'>";
 			//this line make a query to get comments from the database
-			$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id'") or die(mysql_error());
+			$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id'") or die(mysql_error()); //it fetches comments for present post from database
 
 			
 			//this loop extracts all the comments from the database and print them on page
@@ -19,15 +19,17 @@
 				echo "<p class='comment'>".$row['comment']."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
 			}
-			//form to post comments
 			
+			//form to post comments
 		echo "<h2>Post a comment</h2>";
 		echo "<div class='well'>";
 		echo "<form action='post_comment.php?ID=".$post_id."' method='post' class='form-vertical'>";
 		?>		<table>
 					<tr><td><label for="commenter_name">Your Name:</label></td>
 						<td><input type=text id="cmnt_name_in" name="commenter_name" value=
-							"<?php if (isset($_SESSION['commenter_name'])) {
+							"<?php
+							//This if block check if user made a comment earlier. If she did, her name is filled in name field automatically
+							 if (isset($_SESSION['commenter_name'])) {
 							echo $_SESSION['commenter_name'];
 							}?>"></td>
 					</tr>
