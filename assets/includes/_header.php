@@ -28,13 +28,16 @@
 	<?php 
 
 	function error_message($message, $btn=0){
-		echo "<div style='margin:6em 0 0 14em; width:400px;' class='container alert-error alert'>";
-		echo $message;
+		echo('<div class="alert alert-block alert-error fade in">');
+		echo '<button class="close" data-dismiss="alert" type="button">×</button>';
+		echo '<h4 class="alert-heading">Oh snap! You got an error!</h4>';
+		echo '<br><p>'.$message.'</p>';
 		if ($btn) {
-			echo "<br><br> <a class='btn btn-danger' href=".$_SERVER['HTTP_REFERER'].">Back</a>";
-		}
-		echo "</div>";
-
+			echo '<p><a class="btn btn-danger" href="'.$_SERVER['HTTP_REFERER'].'">Take this action</a>
+				</p>';
+				// <a class="btn" href="#">Or do this</a>
+			}
+		echo '</div>';
 	}
 
 	//THIS BLOCK PREVENT REGULAR USERS FROM ACCESSING ADMIN PAGES (EDIT_POST, DELETE ETC)
@@ -51,7 +54,7 @@
 @	$connection = mysql_connect("localhost", $db_username, $db_password) or die(error_message("Cannot connect with server",0));
 @	$db = mysql_select_db($db_name)  or die(error_message("Cannot connect with Database", 0));
 	
-	
+
 	
 	 ?>
 

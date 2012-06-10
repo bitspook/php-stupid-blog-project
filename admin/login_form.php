@@ -2,10 +2,10 @@
 <?php
 	if (isset($_GET['atmpt'])) {
 		if ($_GET['atmpt'] == 0) {
-			echo "<div style='margin:3em 5em 2em 7em;' class='container span5 alert-error alert'>Please enter username and password.</div>";
+			error_message("Please enter both username and password.");
 		}
 		else {
-			echo "<div style='margin:3em 5em 2em 7em;' class='container span5 alert-error alert'>Wrong username and password combination.</div>";	
+			error_message("Wrong username and password combination.");	
 		}
 	}
 ?>

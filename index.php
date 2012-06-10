@@ -30,7 +30,7 @@
 				<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 			</div>
 			<!-- SLIDESHOW CODE ENDS -->
-
+			
 		<?php 
 			$post_query = mysql_query("SELECT * FROM `blog_posts` ORDER BY id DESC")  or die(error_message("Cannot Connect fetch data from database."));  //this function make query to database, or print error
 
