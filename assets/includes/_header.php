@@ -28,16 +28,35 @@
 	<?php 
 
 	function error_message($message, $btn=0){
+		//This function is used to show nice error messages with optional back button. 
 		echo('<div class="alert alert-block alert-error fade in">');
 		echo '<button class="close" data-dismiss="alert" type="button">×</button>';
 		echo '<h4 class="alert-heading">Oh snap! You got an error!</h4>';
 		echo '<br><p>'.$message.'</p>';
 		if ($btn) {
-			echo '<p><a class="btn btn-danger" href="'.$_SERVER['HTTP_REFERER'].'">Take this action</a>
+			echo '<p><a class="btn btn-danger" href="'.$_SERVER['HTTP_REFERER'].'">BACK</a>
 				</p>';
 				// <a class="btn" href="#">Or do this</a>
 			}
 		echo '</div>';
+	}
+
+	function sanitize($data) {
+		//This function sanitize data before sending to database. This prevent error and sql injection when some idiot add characters like /'%" etc in input
+
+		// remove whitespaces (not a must though)
+		$data = trim($data); 
+
+		// apply stripslashes if magic_quotes_gpc is enabled
+		if(get_magic_quotes_gpc()) {
+			$data = stripslashes($data);
+		}
+
+		$data = mysql_real_escape_string($data);
+
+		return $data;
+
+
 	}
 
 	//THIS BLOCK PREVENT REGULAR USERS FROM ACCESSING ADMIN PAGES (EDIT_POST, DELETE ETC)

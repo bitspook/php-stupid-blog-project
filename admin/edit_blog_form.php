@@ -4,7 +4,7 @@
 
 	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
-		echo "<h2>Edit Blog Entry</h2><br>"; //if creating new post, this is the header
+		echo "<h2>Edit Blog Entry</h2><br>"; //if editing existing post, this is the header
 
 		$query = mysql_query("SELECT * FROM blog_posts WHERE id='$id'");
 		$row = mysql_fetch_assoc($query);

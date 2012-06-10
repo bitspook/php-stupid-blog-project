@@ -1,7 +1,7 @@
 <?php include_once "../assets/includes/_header.php";
 	
 	if(isset($_GET['post_id'])) {
-		$post_id = $_GET['post_id'];
+		$post_id = sanitize($_GET['post_id']);
 
 		$query = mysql_query("DELETE FROM `blog_posts` WHERE `id`='$post_id'") or die(error_message("Can't Delete Post. Query Failed",1));
 		header("location:../index.php");

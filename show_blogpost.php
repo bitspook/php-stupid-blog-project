@@ -1,10 +1,10 @@
 <?php include 'assets/includes/_header.php';
 /* 	-----------------------------------------------------------------------------------------------------*/
 			if(isset($_GET['ID']) && !empty($_GET['ID']) && is_numeric($_GET['ID'])){
-				$post_id = $_GET['ID'];
+				$post_id = sanitize($_GET['ID']);
 			}
 			elseif (isset($_GET['category']) && !empty($_GET['category'])){
-				$category = $_GET['category'];
+				$category = sanitize($_GET['category']);
 			}
 			else header("location:index.php");
 			
@@ -13,9 +13,9 @@
 /* 	-----------------------------------------------------------------------------------------------------*/
 			if (isset($post_id)) {
 
-				// this condition check if the post with given $post_id exist in database. If not, it redirects to home page
+				// this condition check if the post with given $post_id exist in database. If not, it shows an error message
 				if(!(array_key_exists('id', (mysql_fetch_assoc(mysql_query("SELECT id FROM `blog_posts` WHERE id= '$post_id'")))))) {
-						header("location:index.php");
+						die(error_message("Post with post id $post_id doesn't exist",1));
 					}
 			
 				//query database to get post content with id = $post_id

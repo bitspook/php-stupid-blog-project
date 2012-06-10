@@ -4,8 +4,8 @@
 	$pw = "password";
 
 	if (isset($_POST['login'])) {
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$username = sanitize($_POST['username']);
+		$password = sanitize($_POST['password']);
 
 		if (!empty($username) && !empty($password)) {
 			if ($username == $un && $password == $pw) {

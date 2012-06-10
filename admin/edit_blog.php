@@ -2,13 +2,13 @@
 	include_once '../assets/includes/_header.php';
 
 	//creating small names for variables
-	$post = $_POST['content'];
-	$title = $_POST['title'];
-	$category = $_POST['category'];
+	$post = sanitize($_POST['content']);
+	$title = sanitize($_POST['title']);
+	$category = sanitize($_POST['category']);
 
 	if (!empty($post) && !empty($title) && !empty($category)) {
 			if (isset($_GET['edit'])) {
-				$id = $_GET['edit'];
+				$id = sanitize($_GET['edit']);
 				$query = mysql_query("UPDATE `blog_posts` SET `title`='$title', `post`='$post',`category`='$category', `date_posted`=now() WHERE id='$id'") or die(error_message(mysql_error()));
 			}
 			else {

@@ -1,5 +1,5 @@
 <?php
- // session_start();
+ //This file is included in show_post.php file in the end of file. It show the comments for the post, and also present a form for users to make comments. It can't be used by itself as it uses variables declared in show_post.php file.
 
 //Now we'll display comments and add a form to enter new comments
 			echo "<h2>Comments</h2>";
