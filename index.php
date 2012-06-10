@@ -1,7 +1,37 @@
 <?php include_once 'assets/includes/_header.php'; ?>
 	<div id="post_list" >
+					
+	<!-- HERE STARTS THE SLIDESHOW CODE -->
+			<div id="myCarousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="item">
+						<img src="assets/img/img1.jpg" alt="">
+						<div class="carousel-caption">
+							<h4>We are just awesome</h4>
+							<p></p>
+						</div>
+					</div>
+					<div class="item">
+						<img src="assets/img/img2.jpg" alt="">
+						<div class="carousel-caption">
+							<h4>Second Thumbnail label</h4>
+							<p></p>
+						</div>
+					</div>
+					<div class="item active">
+						<img src="assets/img/img3.jpg" alt="">
+						<div class="carousel-caption">
+							<h4>Third Thumbnail label</h4>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+			</div>
+			<!-- SLIDESHOW CODE ENDS -->
+
 		<?php 
-			
 			$post_query = mysql_query("SELECT * FROM `blog_posts` ORDER BY id DESC")  or die(error_message("Cannot Connect fetch data from database."));  //this function make query to database, or print error
 
 			$author = "Admin";

@@ -14,4 +14,4 @@
 	}
  ?>
 
- <?php include_once "../assets/includes/_footer.php";
+ <?php include_once "../assets/includes/_footer.php"; ?>
