@@ -20,6 +20,7 @@
 				$post_query = mysql_query("SELECT * FROM `blog_posts` WHERE id= '$post_id'")  or die(error_message("Cannot Connect to database."));  //this function make query to database, or print error
 				
 			}
+			else { die(error_message("Unable to get post from database.",1)); }
 				
 
 /* 	-----------------------------------------------------------------------------------------------------*/
@@ -28,7 +29,7 @@
 			$row = mysql_fetch_assoc($post_query);
 				echo "<h2 class='post_title'>".$row['title']."</h2>";
 				echo "<p class='muted'>".$row['category']."</p>";
-				echo "<p>".$row['post']."</p>";
+				echo "<p align='justify'><pre>".stripslashes($row['post'])."</pre></p>";
 				echo "<p> Last Updated: ".$row['date_posted']."</p>";
 				
 			
@@ -36,5 +37,5 @@
 			include 'blog_comment.php';
 	?>
 	</div>	
-</div>
+
 <?php include_once 'assets/includes/_footer.php'; ?>

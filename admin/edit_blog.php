@@ -14,7 +14,7 @@
 				$id = sanitize($_GET['edit']);	//set the id of post to edit
 				$query = mysql_query("UPDATE `blog_posts` SET `title`='$title', `post`='$post',`category`='$category', `date_posted`=now() WHERE id='$id'") or die(error_message(mysql_error())); //mysql query to update post with id = $id, and other data sent from edit_blog_form.php file
 			}
-			elseif (isset($_GET['new'])) {	//condtion to check if $_GET has new attribute. This creates a new post.
+			else {	//condtion to check if $_GET has new attribute. This creates a new post.
 				$query = mysql_query("INSERT INTO `blog_posts` (title, post, category,  date_posted) VALUES ('$title', '$post', '$category', now())") or die(mysql_error()); //This query create new post with data sent from edit_blog_form.php script.
 
 				//Here $id is set to new value if new post is created. Function below returns the last auto-incremented value. If old post is edited, it don't

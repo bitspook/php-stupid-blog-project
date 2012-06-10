@@ -25,13 +25,13 @@
 				</td>
 			</tr>
 			<tr>
+				<td><lable>Description</lable> </td> <td><input id='title_in' type="text" name="category" value="<?php echo $row['category']; ?>"></td>
+			</tr>
+			<tr>
 				<td><lable>Body</lable></td> 
 				<td>
 					<textarea id="post_in" name="content"><?php echo $row['post']; ?></textarea>
 				</td>
-			</tr>
-			<tr>
-				<td><lable>Category</lable> </td> <td><input type="text" name="category" value="<?php echo $row['category']; ?>"></td>
 			</tr>
 			<tr>
 				<td><input class="btn btn-primary" type="submit" name="submit" value="Update"></td>
@@ -61,13 +61,13 @@
 				</td>
 			</tr>
 			<tr>
+				<td><lable>Description</lable> </td> <td><input id="title_in" type="text" name="category"></td>
+			</tr>
+			<tr>
 				<td><lable>Body</lable></td> 
 				<td>
 					<textarea id="post_in" name="content"></textarea>
 				</td>
-			</tr>
-			<tr>
-				<td><lable>Category</lable> </td> <td><input type="text" name="category"></td>
 			</tr>
 			<tr>
 				<td><input class="btn btn-primary" type="submit" name="submit" value="Publish"></td>

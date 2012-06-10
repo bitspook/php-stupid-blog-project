@@ -6,21 +6,21 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Stupid Blog</title>
 	<?php
 		//These ifs check if in admin dir, in that case it sets correct addresses to link
 		if (strstr($_SERVER['SCRIPT_NAME'], 'admin')) {
 			echo '<link rel="stylesheet" type="text/css" href="../assets/custom-style.css">';
-			echo '<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.css">';
+			echo '<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">';
 			echo '<script src="../assets/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>';
-			echo '<script src="../assets/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>';
+			echo '<script src="../assets/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>';
 			include_once '../assets/includes/_navbar.php';
 		}
 		else {
 		 echo '<link rel="stylesheet" type="text/css" href="assets/custom-style.css">';
-		 echo '<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">';
+		 echo '<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">';
 		 echo '<script src="assets/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>';
-		 echo '<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>';
+		 echo '<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>';
 		 include_once 'assets/includes/_navbar.php';
 		}
 	?>
