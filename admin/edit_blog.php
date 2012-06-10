@@ -5,7 +5,7 @@
 
 	$post = sanitize($_POST['content']);  //these lines set variables with sanitized data to be sent to the database for editing or creating a post (see sanitize() in _header file)
 	$title = sanitize($_POST['title']);
-	$category = sanitize($_POST['category']);
+	$category = sanitize(nl2br($_POST['category']));  //nl2br() function is used here to convert newlines to <br> because otherwise php just print everything in single line when data is fetched back from database
 
 
 	if (!empty($post) && !empty($title) && !empty($category)) { //condition to check if all the fields are filled with data. If not, an error message is displayed (see the else statement in end)

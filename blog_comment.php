@@ -18,7 +18,7 @@
 					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?comment_id=";
 					echo $row['comment_id']."'>Delete</a>";
 				}
-				echo "<p class='comment'>".$row['comment']."</p>";
+				echo "<p class='comment well'>".$row['comment']."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
 			}
 			

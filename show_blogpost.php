@@ -29,13 +29,13 @@
 			$row = mysql_fetch_assoc($post_query);
 				echo "<h2 class='post_title'>".$row['title']."</h2>";
 				echo "<p class='muted'>".$row['category']."</p>";
-				echo "<p align='justify'><pre>".stripslashes($row['post'])."</pre></p>";
-				echo "<p> Last Updated: ".$row['date_posted']."</p>";
+				echo "<div class='post'><p align='justify'>".nl2br($row['post'])."</p>";
+				echo "<p> Last Updated: ".$row['date_posted']."</p></div>";
 				
 			
 			$post_id = $row['id']; //blog_comment.php need variable $post_id to be set to fetch comments from database
 			include 'blog_comment.php';
 	?>
-	</div>	
+	
 
 <?php include_once 'assets/includes/_footer.php'; ?>

@@ -11,6 +11,10 @@ a:hover {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+pre {
+  color: red;
+}
+
 #new-post-btn {
     display: block;
     height: 8px;
