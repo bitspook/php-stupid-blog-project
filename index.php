@@ -1,4 +1,6 @@
 <?php include_once 'assets/includes/_header.php'; ?>
+
+<!-- THIS IS THE HOME PAGE -->
 	<div id="post_list" >
 					
 	<!-- HERE STARTS THE SLIDESHOW CODE -->

@@ -12,6 +12,8 @@
 			while($row = mysql_fetch_assoc($comment_query)){
 				echo "<a name='".$row['comment_id']."'></a>";
 				echo "<h3>".$row['name']." said </h3>";
+
+				//if the admin is browsing the page, this block show a delete button with comments to, well, delete the comments
 				if (isset($_SESSION['auth'])) {
 					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?comment_id=";
 					echo $row['comment_id']."'>Delete</a>";

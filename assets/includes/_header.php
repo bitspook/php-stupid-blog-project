@@ -1,10 +1,14 @@
 <?php session_start(); ?>
+
+<!-- THIS IS THE HEADER FILE. IT IS USED TO INCLUDE STYLESHEETS, AND JQUERY ETC TO ALL PAGES. IT IS USED AS A TEMPLATE. IT ALSO STARTS A SESSION, MAKE A DATABASE CONNECTION, AND DEFINE SOME FUNCTIONS USED ELSEWHERE IN PROJECT -->
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
 	<?php
+		//These ifs check if in admin dir, in that case it sets correct addresses to link
 		if (strstr($_SERVER['SCRIPT_NAME'], 'admin')) {
 			echo '<link rel="stylesheet" type="text/css" href="../assets/custom-style.css">';
 			echo '<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.css">';
@@ -23,12 +27,18 @@
 </head>
 <body>
 	<div class="container">
-	<h1 class='page-header'>Stupid Blog</h1>
+
+	<h1 class='page-header'>Stupid Blog</h1>	<!-- page header -->
+
 	<div class="span8">
 	<?php 
 
 	function error_message($message, $btn=0){
+
 		//This function is used to show nice error messages with optional back button. 
+		//It take in a message string and an optional variable. If optional variable if given a value anthing other then 0, a back button is displayed with error message.  
+		//for example: error_message("I am error") show no button
+		// error_message("I am error",1) show a back button at bottom
 		echo('<div class="alert alert-block alert-error fade in">');
 		echo '<button class="close" data-dismiss="alert" type="button">×</button>';
 		echo '<h4 class="alert-heading">Oh snap! You got an error!</h4>';

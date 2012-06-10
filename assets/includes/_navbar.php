@@ -1,4 +1,8 @@
-<?php	$in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');?>
+<?php	
+
+//This is the code for navigation bar (black bar on top). It is from bootstrap framework, so don't worry about all the code here, you get it readymade
+
+$in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');  //this sets up variable to check if we are in admin dir i.e. in /admin/ folder. It is used to change link addresses in navbar?> 
 	 
 			<div class="navbar">
 				<div class="navbar-inner">
@@ -20,7 +24,7 @@
 						<?php if($in_admin_dir){
 								echo "href='../categories.php'";
 							} else echo 'href="categories.php"'; ?>
-						>Categories</a></li>
+						>Index</a></li>
 								
 							</ul>
 							
