@@ -31,11 +31,7 @@
 	<h1 class='page-header'>Stupid Blog</h1>	<!-- page header -->
 
 	<div class="span8">
-	<?php 
-
-	function error_message($message, $btn=0){
-
-		//This function is used to show nice error messages with optional back button. 
+	<?php function error_message($message, $btn=0){//This function is used to show nice error messages with optional back button. 
 		//It take in a message string and an optional variable. If optional variable if given a value anthing other then 0, a back button is displayed with error message.  
 		//for example: error_message("I am error") show no button
 		// error_message("I am error",1) show a back button at bottom
@@ -46,7 +42,6 @@
 		if ($btn) {
 			echo '<p><a class="btn btn-danger" href="'.$_SERVER['HTTP_REFERER'].'">BACK</a>
 				</p>';
-				// <a class="btn" href="#">Or do this</a>
 			}
 		echo '</div>';
 	}

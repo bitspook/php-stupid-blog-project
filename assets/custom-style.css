@@ -2,6 +2,11 @@ a:hover {
     text-decoration: none;
 }
 
+img {
+  width: 4;
+  height: 6;
+}
+
 .blue-well {
   min-height: 20px;
   padding: 19px;

@@ -2,33 +2,37 @@
 
 //This is the code for navigation bar (black bar on top). It is from bootstrap framework, so don't worry about all the code here, you get it readymade
 
-$in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');  //this sets up variable to check if we are in admin dir i.e. in /admin/ folder. It is used to change link addresses in navbar?> 
+$in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');
+
+function create_link($link){
+	$in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');
+	if($in_admin_dir){
+		echo "../".$link;
+	} else echo $link;
+}
+
+
+?> 
 	 
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container" style="width: 70%; align:center;">
 						<!-- ifs in this block give right link address to nav links depending on where they are -->
-						<a class="brand" 
-						<?php if($in_admin_dir){
-								echo "href = '../index.php'";
-							} else echo 'href="index.php"' ?>
+						<a class="brand" href = 
+						<?php create_link('index.php');?>							
 						>Stupid Blog</a>
 						<div class="nav-collapse">
 							<ul class="nav">
-								<li ><a  
-						<?php if($in_admin_dir){
-								echo "href = '../index.php'";
-							} else echo 'href="index.php"'; ?>
-						>Home</a></li>
-								<li ><a   
-						<?php if($in_admin_dir){
-								echo "href='../categories.php'";
-							} else echo 'href="categories.php"'; ?>
-						>Index</a></li>
-								
+								<li ><a href = "<?php create_link('index.php');?>";>Home</a>
+								</li>
+								<li ><a href='<?php create_link('categories.php');?>';>Index</a>
+								</li>
 							</ul>
 							
 							<ul class="nav pull-right">
+								<li>
+									<a href="#aboutus_Modal" data-toggle="modal">About Us</a>
+								</li>
 								<!-- if admin has logged in put new buttons in navbar-->
 								<?php										
 									if (isset($_SESSION['auth']) && $_SESSION['auth']==1){ 
@@ -53,6 +57,7 @@ $in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');  //this sets up variab
 								?>
 										
 										<li class="divider-vertical"></li>
+										
 										<li><a href=
 											<?php 
 												if($in_admin_dir) echo "login.php?logout=1";
@@ -65,11 +70,56 @@ $in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');  //this sets up variab
 											else echo "href='admin/login_form.php'";
 											echo ">Log In</a></li>";
 								 } ?>
-
-										 
+																		 
 							</ul>
+			
 						</div><!-- /.nav-collapse -->
 					</div>
 				</div><!-- /navbar-inner -->
 			</div>
 
+		<div class="modal hide fade" id="aboutus_Modal" style="display: none;">
+            <div class="modal-header">
+              <button data-dismiss="modal" class="close" type="button">×</button>
+              <h3>About Us</h3>
+            </div>
+            <div class="modal-body">
+            	<div class='well pull-center' style="height:160px;">
+            		<img class='thumbnail pull-right' height=145 width=120 src=<?php create_link('assets/img/creator1.jpg')?> />
+            		<table class='table pull-left span3' style="width:50%;">
+            			<tr>
+            				<th>Name</th>
+            				<td>Creator 1</td>
+            				<td></td>
+            			</tr>
+            			<tr>
+            				<th>Roll No.</th>
+            				<td>100260824409</td>
+            			</tr>
+            			<tr>
+            				<th>Description</th>
+            				<td>Put here the legend of your awesomeness.</td>
+            			</tr>
+            		</table>
+            	</div>
+            		<div class='well pull-center' style="height:160px;">
+            			<img class="thumbnail pull-right" height=145 width=120 src=<?php create_link('assets/img/creator1.jpg')?>>
+            				<table class='table pull-left span3' style="width:50%;">
+            					<tr>
+            						<td></td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td></td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td></td>
+            						<td></td>
+            					</tr>
+            				</table>
+            			</div>
+              	</div>
+            
+            <div class="modal-footer">
+              <a data-dismiss="modal" class="btn" href="#">Close</a></div></div>

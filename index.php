@@ -2,6 +2,7 @@
 
 <!-- THIS IS THE HOME PAGE -->
 	<div id="post_list" >
+		
 					
 	<!-- HERE STARTS THE SLIDESHOW CODE -->
 			<div id="myCarousel" class="carousel slide">

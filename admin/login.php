@@ -15,7 +15,7 @@
 			if ($username == $un && $password == $pw) {		//condition to check if entered username and password are correct.
 			$_SESSION['auth'] = 1;		//if username and password are correct, a session variable is set to identify admin.This is used in other files to show admin specific components like edit, new post and delete buttons on navbar etc.
 			$_SESSION['name'] = "Admin";	//this session variable is of no use, it is not used anywhere
-			header("location:../index.php");	//redirects to home page after logging in successfully
+			header("location:../index.php");//redirects to home page after logging in successfully
 			}
 			else {
 				header("location:login_form.php?atmpt=1"); //if usename and password are incorrect, it set atmpt variable in $_GET to 1 and redirect to login_form page
@@ -27,10 +27,7 @@
 	elseif (isset($_REQUEST['logout'])) {
 		$_SESSION = array(); //unset all session variables. This logs out the admin.
 		session_destroy();	//session is destroyed
-		header("location:../index.php");	//redirects to home page
+		header("location:../index.php");//redirects to home page
 	}
-
-
-
 	include_once '../assets/includes/_footer.php';
  ?>
