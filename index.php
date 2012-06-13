@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					<div class="item active">
-						<img src="assets/img/img3.jpg" alt="">
+						<img src="assets/img/img3.jpg" height=272px alt="">
 						<div class="carousel-caption">
 							<h4>Third Thumbnail label</h4>
 							<p></p>
@@ -35,7 +35,7 @@
 			<!-- SLIDESHOW CODE ENDS -->
 			
 		<?php 
-			$post_query = mysql_query("SELECT * FROM `blog_posts` ORDER BY id DESC")  or die(error_message("Cannot Connect fetch data from database."));  //this function make query to database, or print error
+			$post_query = mysql_query("SELECT * FROM `blog_posts` ORDER BY id DESC LIMIT 10")  or die(error_message("Cannot Connect fetch data from database."));  //this function make query to database, or print error
 
 			$author = "Admin";
 			while ($post = mysql_fetch_assoc($post_query)) {

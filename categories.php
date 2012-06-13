@@ -2,7 +2,7 @@
 
 //This script shows the index. It provide links to posts titles with their descriptions.
 
-	$query = mysql_query("SELECT id,title,category FROM blog_posts");
+	$query = mysql_query("SELECT id,title,category FROM blog_posts ORDER BY id DESC");
 
 	//This presents one link per line with description and set $category $_GET variable to be sent to show_blogpost.php file. 
 	while($row = mysql_fetch_assoc($query)){

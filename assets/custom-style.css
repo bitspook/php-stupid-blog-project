@@ -104,20 +104,21 @@ pre {
 }
 
 #post_in {
-	width: 40em;
-	height: 25em;
+	width: 60em;
+	height: 50em;
 	resize: none;
 }
 
 #title_in {
-	width: 40em;
+	width: 60em;
 }
 
 #cmnt_name_in{
-  width: 40em;
+  width: 25em;
 }
 
 #cmnt_in{
-  width: 40em;
+  width: 35em;
+  height: 7em;
   resize: none;
 }

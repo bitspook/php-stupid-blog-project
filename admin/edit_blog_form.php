@@ -1,5 +1,7 @@
 <?php	include_once "../assets/includes/_header.php";
 
+			echo '<script src="../assets/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8" async defer></script>';
+
 //This file presents a form editing a post, or creating a new post. If editing a post, it fills the form with data of old post. If creating new post, it present a new empty form.
 
 	//IF EDITING EXISTING POST THIS IF BLOCK IS EXECUTED
@@ -30,7 +32,8 @@
 			<tr>
 				<td><lable>Body</lable></td> 
 				<td>
-					<textarea id="post_in" name="content"><?php echo $row['post']; ?></textarea>
+					<textarea class="ckeditor" id="post_in" name="content"><?php echo $row['post']; ?></textarea>
+					<script type="text/javascript">window.onload(CKEDITOR.replace( 'post_in' ));</script>
 				</td>
 			</tr>
 			<tr>
@@ -61,12 +64,12 @@
 				</td>
 			</tr>
 			<tr>
-				<td><lable>Description</lable> </td> <td><input id="title_in" type="text" name="category"></td>
+				<td><lable>Description</lable> </td> <td><input id="title_in" type="text" name="category" placeholder="Few words about your awesome post"></td>
 			</tr>
 			<tr>
-				<td><lable>Body</lable></td> 
+				<td><lable></lable></td> 
 				<td>
-					<textarea id="post_in" name="content"></textarea>
+					<textarea class='ckeditor' id="post_in" name="content"></textarea>
 				</td>
 			</tr>
 			<tr>

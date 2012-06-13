@@ -29,7 +29,7 @@
 			$row = mysql_fetch_assoc($post_query);
 				echo "<h2 class='post_title'>".$row['title']."</h2>";
 				echo "<p class='muted'>".$row['category']."</p>";
-				echo "<div class='post'><p align='justify'>".nl2br($row['post'])."</p>";
+				echo "<div class='post'><p>".$row['post']."</p>";
 				echo "<p> Last Updated: ".$row['date_posted']."</p></div>";
 				
 			

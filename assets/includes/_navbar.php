@@ -60,7 +60,7 @@ function create_link($link){
 										
 										<li><a href=
 											<?php 
-												if($in_admin_dir) echo "login.php?logout=1";
+												if($in_admin_dir) echo "/admin/login.php?logout=1";
 												else echo "admin/login.php?logout=1";
 											?>
 											>Log Out</a></li>
@@ -78,6 +78,7 @@ function create_link($link){
 				</div><!-- /navbar-inner -->
 			</div>
 
+<!-- ABOUT US MODAL CONTENT START HERE -->
 		<div class="modal hide fade" id="aboutus_Modal" style="display: none;">
             <div class="modal-header">
               <button data-dismiss="modal" class="close" type="button">×</button>
@@ -89,7 +90,7 @@ function create_link($link){
             		<table class='table pull-left span3' style="width:50%;">
             			<tr>
             				<th>Name</th>
-            				<td>Creator 1</td>
+            				<td>Charanjit Singh</td>
             				<td></td>
             			</tr>
             			<tr>
@@ -98,7 +99,7 @@ function create_link($link){
             			</tr>
             			<tr>
             				<th>Description</th>
-            				<td>Put here the legend of your awesomeness.</td>
+            				<td>This block is just way too small to hold the legend of my awesomeness.</td>
             			</tr>
             		</table>
             	</div>
