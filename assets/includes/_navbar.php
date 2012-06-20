@@ -60,7 +60,7 @@ function create_link($link){
 										
 										<li><a href=
 											<?php 
-												if($in_admin_dir) echo "/admin/login.php?logout=1";
+												if($in_admin_dir) echo "login.php?logout=1";
 												else echo "admin/login.php?logout=1";
 											?>
 											>Log Out</a></li>

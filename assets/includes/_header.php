@@ -14,7 +14,6 @@
 			echo '<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">';
 			echo '<script src="../assets/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>';
 			echo '<script src="../assets/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>';
-			// echo '<script src="../assets/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8" async defer></script>';
 			include_once '../assets/includes/_navbar.php';
 		}
 		else {
@@ -22,8 +21,8 @@
 		 echo '<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">';
 		 echo '<script src="assets/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>';
 		 echo '<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>';
-		 echo '<script src="assets/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8" async defer></script>';
-include_once 'assets/includes/_navbar.php';
+		include_once 'assets/includes/_navbar.php';
+
 		}
 	?>
 </head>
@@ -74,15 +73,14 @@ include_once 'assets/includes/_navbar.php';
 	//THIS BLOCK SETUP DATABASE CONNECTION
 
 	$db_username = "root";
-	$db_password = "";
+	$db_password = "root";
 	$db_name = "blog";
 		
 @	$connection = mysql_connect("localhost", $db_username, $db_password) or die(error_message("Cannot connect with server",0));
 @	$db = mysql_select_db($db_name)  or die(error_message("Cannot connect with Database", 0));
 	
 
+		include_once 'assets/includes/_sidebar.php';
 	
 	 ?>
 
-
-	

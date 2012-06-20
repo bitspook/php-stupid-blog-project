@@ -32,7 +32,7 @@
 			<tr>
 				<td><lable>Body</lable></td> 
 				<td>
-					<textarea class="ckeditor" id="post_in" name="content"><?php echo $row['post']; ?></textarea>
+					<textarea class="ckeditor" id="post_in" name="content"><?php echo nl2br($row['post']); ?></textarea>
 					<script type="text/javascript">window.onload(CKEDITOR.replace( 'post_in' ));</script>
 				</td>
 			</tr>
