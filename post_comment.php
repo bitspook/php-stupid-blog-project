@@ -1,4 +1,6 @@
-<?php include_once 'assets/includes/_header.php';
+<?php
+	ob_start();  //a workaround to make redirects work. It starts output buffering, sending all data including location header in same chunk, so no headers-already-sent error
+	include_once 'assets/includes/_header.php';
 
 	//THIS FILE SEND COMMENTS TO DATABASE. IT GET INPUT FROM BLOG_COMMENTS.PHP FILE AND SEND THE ENTERED DATA TO DATABASE
 
@@ -14,8 +16,7 @@
 	
 	$cmnt_id = mysql_insert_id($connection);	//set comment_id to last inserted comment_id in database
 
-	header("location:show_blogpost.php?ID=".$post_id."#".$cmnt_id); //redirects to the location in show_blogspot.php file where last entered comment appears
+	header("location:show_blogpost.php?ID=".$post_id."#".$cmnt_id); 
 
-	include_once 'assets/includes/_footer.php';
-
- ?>
+	ob_end_flush();
+	?>

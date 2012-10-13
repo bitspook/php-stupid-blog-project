@@ -16,7 +16,7 @@
 				//if the admin is browsing the page, this block show a delete button with comments to, well, delete the comments
 				if (isset($_SESSION['auth'])) {
 					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?comment_id=";
-					echo $row['comment_id']."'>Delete</a>";
+					echo $row['comment_id']."' onclick='delete();'>Delete</a>";
 				}
 				echo "<p class='comment well'>".nl2br($row['comment'])."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
