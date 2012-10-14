@@ -1,6 +1,6 @@
 <?php	
 
-//This is the code for navigation bar (black bar on top). It is from bootstrap framework, so don't worry about all the code here, you get it readymade
+//This is the code for navigation bar. It is from bootstrap framework, so don't worry about all the code here, you get it readymade
 
 $in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');
 
