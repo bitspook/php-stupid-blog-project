@@ -1,6 +1,6 @@
 <?php	
 
-//This is the code for navigation bar (black bar on top). It is from bootstrap framework, so don't worry about all the code here, you get it readymade
+//This is the code for navigation bar. It is from bootstrap framework, so don't worry about all the code here, you get it readymade
 
 $in_admin_dir = strstr($_SERVER['SCRIPT_NAME'], 'admin');
 
@@ -27,6 +27,12 @@ function create_link($link){
 								</li>
 								<li ><a href='<?php create_link('categories.php');?>';>Index</a>
 								</li>
+								<li>
+									<form class="navbar-search pull-left" action="search.php">
+              					<input type="text" class="search-query span2" placeholder="Search" name="search">
+              				</form>
+								</li>
+
 							</ul>
 							
 							<ul class="nav pull-right">
