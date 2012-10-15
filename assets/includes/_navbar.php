@@ -27,6 +27,12 @@ function create_link($link){
 								</li>
 								<li ><a href='<?php create_link('categories.php');?>';>Index</a>
 								</li>
+								<li>
+									<form class="navbar-search pull-left" action="search.php">
+              					<input type="text" class="search-query span2" placeholder="Search" name="search">
+              				</form>
+								</li>
+
 							</ul>
 							
 							<ul class="nav pull-right">
