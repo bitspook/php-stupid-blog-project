@@ -2,7 +2,7 @@
 	ob_start();  //a workaround to make redirects work. It starts output buffering, sending all data including location header in same chunk, so no headers-already-sent error
 	include_once 'assets/includes/_header.php';
 	if (isset($_REQUEST['search']) and trim($_REQUEST['search'] != '')) {
-		$search =  $_REQUEST['search'];
+		$search =  sanitize($_REQUEST['search']);
 		
 		$query = mysql_query("SELECT id, title, category 
 					FROM  `blog_posts` 
