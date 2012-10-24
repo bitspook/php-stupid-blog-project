@@ -19,4 +19,4 @@
 	header("location:show_blogpost.php?ID=".$post_id."#".$cmnt_id); 
 
 	ob_end_flush();
-	?>
+?>

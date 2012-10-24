@@ -14,9 +14,9 @@ function create_link($link){
 
 ?> 
 	 
-			<div class="navbar">
+			<div class="navbar navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
-					<div class="container" style="width: 70%; align:center;">
+					<div class="container" >
 						<!-- ifs in this block give right link address to nav links depending on where they are -->
 						<a class="brand" href = 
 						<?php create_link('index.php');?>							
@@ -27,7 +27,7 @@ function create_link($link){
 								</li>
 								<li ><a href='<?php create_link('categories.php');?>';>Index</a>
 								</li>
-								<li>
+								<li style="margin-left: 50px;">
 									<form class="navbar-search pull-left" action="search.php">
               					<input type="text" class="search-query span2" placeholder="Search" name="search">
               				</form>
@@ -92,7 +92,7 @@ function create_link($link){
             </div>
             <div class="modal-body">
             	<div class='well pull-center' style="height:160px;">
-            		<img class='thumbnail pull-right' height=145 width=120 src=<?php create_link('assets/img/creator1.jpg')?> />
+            		<img class='thumbnail pull-right' height=145 width=120 src=<?php create_link('assets/img/creator.jpg')?> />
             		<table class='table pull-left span3' style="width:50%;">
             			<tr>
             				<th>Name</th>
@@ -113,16 +113,16 @@ function create_link($link){
             			<img class="thumbnail pull-right" height=145 width=120 src=<?php create_link('assets/img/creator1.jpg')?>>
             				<table class='table pull-left span3' style="width:50%;">
             					<tr>
-            						<td></td>
-            						<td></td>
+            						<td>Name</td>
+            						<td>Sunny Singh</td>
             					</tr>
             					<tr>
-            						<td></td>
-            						<td></td>
+            						<td>Roll No.</td>
+            						<td>123456</td>
             					</tr>
             					<tr>
-            						<td></td>
-            						<td></td>
+            						<td>Description</td>
+            						<td>ummm...well..I exist</td>
             					</tr>
             				</table>
             			</div>

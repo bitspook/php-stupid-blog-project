@@ -26,10 +26,10 @@
 		}
 	?>
 </head>
-<body>
+<body id="body">
 	<div class="container">
 
-	<h1 class='page-header'>Stupid Blog</h1>	<!-- page header -->
+	<h1 class='page-header' id='page-header'>Stupid Blog</h1>	<!-- page header -->
 
 	<div class="span8">
 	<?php function error_message($message, $btn=0){//This function is used to show nice error messages with optional back button. 

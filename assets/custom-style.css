@@ -157,3 +157,19 @@ pre {
 .top-posts div:hover {
   box-shadow: 0px 0em 5px rgba(136,236,218, 0.15);
 }
+
+body > .container{
+    display: block;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(212,212,212,0.9);
+}
+
+#body{
+  background: #eee;
+}
+
+#page-header{
+  margin-top: 50px;
+}
