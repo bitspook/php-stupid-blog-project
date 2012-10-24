@@ -1,4 +1,6 @@
-<?php 	include_once '../assets/includes/_header.php'; 
+<?php 	ob_start(); 
+	
+include_once '../assets/includes/_header.php'; 
 
 //This is script logs the admin in or out. Since we are having only one user, username and password are saved in this file only, not in database.
 
@@ -30,4 +32,5 @@
 		header("location:../index.php");//redirects to home page
 	}
 	include_once '../assets/includes/_footer.php';
+	ob_end_flush
  ?>
