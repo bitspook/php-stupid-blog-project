@@ -11,7 +11,7 @@
 		
 		$num_rows = mysql_num_rows($query);
 		if( $num_rows == 0) {
-			echo "<h2>No Data found related to '$search'</h2>";
+			echo "<h2>No Results found</h2>";
 		}
 
 		while($row = mysql_fetch_assoc($query)){
@@ -22,5 +22,6 @@
 	else{
 		header("Location: index.php");
 	}
+	include_once 'assets/includes/_footer.php';
 	ob_end_flush();
  ?>
