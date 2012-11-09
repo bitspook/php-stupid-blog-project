@@ -5,7 +5,7 @@
 			echo "<h2>Comments</h2>";
 			echo "<div class='well'>";
 			//this line make a query to get comments from the database
-			$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id'") or die(mysql_error()); //it fetches comments for present post from database
+			$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id' AND approved") or die(mysql_error()); //it fetches approved comments for present post from database
 
 			
 			//this loop extracts all the comments from the database and print them on page
