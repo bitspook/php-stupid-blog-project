@@ -41,7 +41,9 @@ function create_link($link){
 								<li>
 									<a href="#aboutus_Modal" data-toggle="modal">About Us</a>
 								</li>
+								<?php if (!isset($_SESSION['auth']) && $_SESSION['auth']==1){ ?>
 								<li><a href="<?php echo $base_url.'presentation.html' ?>">Presentation</a></li>
+								<?php } ?>
 								<!-- if admin has logged in put new buttons in navbar-->
 								<?php										
 									if (isset($_SESSION['auth']) && $_SESSION['auth']==1){ 
