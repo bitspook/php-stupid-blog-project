@@ -32,5 +32,5 @@ include_once '../assets/includes/_header.php';
 		header("location:../index.php");//redirects to home page
 	}
 	include_once '../assets/includes/_footer.php';
-	ob_end_flush
+	ob_end_flush();
  ?>

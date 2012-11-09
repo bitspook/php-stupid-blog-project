@@ -1,5 +1,5 @@
 <?php
- //This file is included in show_post.php file in the end of file. It show the comments for the post, and also present a form for users to make comments. It can't be used by itself as it uses variables declared in show_post.php file.
+ //This file is included in show_blogpost.php file in the end of file. It show the comments for the post, and also present a form for users to make comments. It can't be used by itself as it uses variables declared in show_post.php file.
 
 //Now we'll display comments and add a form to enter new comments
 			echo "<h2>Comments</h2>";
@@ -7,7 +7,10 @@
 			//this line make a query to get comments from the database
 			$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id' AND approved") or die(mysql_error()); //it fetches approved comments for present post from database
 
-			
+			if (isset($_SESSION['auth'])) {
+				$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id'") or die(mysql_error()); //it fetches all comments for present post from database				
+			}
+
 			//this loop extracts all the comments from the database and print them on page
 			while($row = mysql_fetch_assoc($comment_query)){
 				echo "<a name='".$row['comment_id']."'></a>";
@@ -15,8 +18,12 @@
 
 				//if the admin is browsing the page, this block show a delete button with comments to, well, delete the comments
 				if (isset($_SESSION['auth'])) {
-					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?comment_id=";
+					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?action=delete&comment_id=";
 					echo $row['comment_id']."' onclick='delete();'>Delete</a>";
+					if ($row['approved'] == 0) {
+						echo "<a class='btn btn-info pull-right' href='admin/delete.php?action=approve&comment_id=";
+						echo $row['comment_id']."' onclick='delete();'>Approve</a>";
+					}
 				}
 				echo "<p class='comment well'>".nl2br($row['comment'])."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
