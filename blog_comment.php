@@ -19,14 +19,25 @@
 				//if the admin is browsing the page, this block show a delete button with comments to, well, delete the comments
 				if (isset($_SESSION['auth'])) {
 					echo "<a class='btn btn-danger pull-right' href='admin/delete.php?action=delete&comment_id=";
+
 					echo $row['comment_id']."' onclick='delete();'>Delete</a>";
+
 					if ($row['approved'] == 0) {
 						echo "<a class='btn btn-info pull-right' href='admin/delete.php?action=approve&comment_id=";
+
 						echo $row['comment_id']."' onclick='delete();'>Approve</a>";
 					}
 				}
 				echo "<p class='comment well'>".nl2br($row['comment'])."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
+
+				if (! isset($_SESSION['auth']) && $_GET['moderate_msg'] == 'true') {
+					echo '<div class="alert alert-info" id="alert">
+					    <button type="button" class="close" data-dismiss="alert">×</button>
+					    <strong>Keep Calm!</strong> Your comment is awaiting moderation.
+					    </div>';
+				}
+
 			}
 			
 			//form to post comments

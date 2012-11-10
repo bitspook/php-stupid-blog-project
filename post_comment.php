@@ -16,7 +16,7 @@
 	
 	$cmnt_id = mysql_insert_id($connection);	//set comment_id to last inserted comment_id in database
 
-	header("location:show_blogpost.php?ID=".$post_id."#".$cmnt_id); 
+	header("location:show_blogpost.php?moderate_msg=true&ID=".$post_id."#alert"); 
 
 	ob_end_flush();
 ?>
