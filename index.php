@@ -17,14 +17,14 @@
 					<div class="item">
 						<img src="assets/img/img2.jpg" alt="">
 						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
+							<h4>You can't beat Us!</h4>
 							<p></p>
 						</div>
 					</div>
 					<div class="item active">
 						<img src="assets/img/img3.jpg" height=272px alt="">
 						<div class="carousel-caption">
-							<h4>Third Thumbnail label</h4>
+							<h4>Feel free to try</h4>
 							<p></p>
 						</div>
 					</div>
@@ -39,16 +39,35 @@
 
 				<?php 
 					$notifications = mysql_num_rows(mysql_query("SELECT * FROM notifications"));
+
 					if ($notifications >= 1) {
 						echo '<div class="span3" id="notifications" onclick="location.href=\'admin/notifications.php\'">';
+						echo "<img class='pull-left' src='http://cdn1.iconfinder.com/data/icons/facebook/notifications.png' />";
 						echo "<h5>Notification</h5>";
-						echo "$notifications comment need moderation!";
+
+						if ($notifications == 1) {
+							echo "$notifications comment need moderation";
+						}
+						else echo "$notifications comments need moderation";
+					?>
+					</div>	
+
+					<div id="notification-dropdown">
+						<a href="admin/notifications.php" class='btn btn-info'><?php echo $notifications;
+							if ($notifications > 1) echo " Notifications";
+							else echo " Notification";
+						 ?></a>
+
+					</div>
+
+				<?php
 					}
 				 ?>
-				</div>	
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
-						$('#notifications').fadeIn(1800);
+						$('#notifications').fadeIn(1800).delay(5000).fadeOut(1800, function(){
+							$('#notification-dropdown').slideDown('slow');
+						});
 					});
 					
 				</script>	

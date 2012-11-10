@@ -138,9 +138,10 @@ h3.admin{
 #notifications {
   display: none;
   background-color: rgba(43,43,43,0.75);
-  color: #60CAF5;
+  /*color: #60CAF5;*/
+  color: #fff;
   position: fixed;
-  right: 15em;
+  right: 8em;
   top: 10%;
   height: auto;
   padding: 2px 0 5px 8px;
@@ -152,17 +153,36 @@ h3.admin{
 }
 #notifications h5{
   margin-bottom: 0;
-  color: #FFFFFF;
+  /*color: #FFFFFF;*/
+  color: #60CAF5;
+}
+#notifications img{
+  height: 50px;
+  width: 50px;
+  margin: 10px 10px 0;
+}
+#notification-dropdown{
+  display: none;
+  position: absolute;
+  top: 38px;
+  right: 4em;
+  background: #fff;
+  border-radius: 0 4px 4px 0;
+  padding: 4px;
+}
+#notification-dropdown .btn{
+  padding: 2px 5px 2px 5px;
 }
 .sidebar {
+  /*display: none;*/
   background-color: #2B2B2B;
   color: #FFFFFF;
   position: absolute;
   right: 0em;
-  top: 28%;
+  top: 50%;
   height: auto;
   padding: 5px 20px 5px 5px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px; /* 0 0 10px; */
   overflow: hidden;
   /*box-shadow: 1px 0.1em 5em #1D2B19;*/
 }
