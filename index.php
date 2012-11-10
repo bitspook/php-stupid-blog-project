@@ -33,6 +33,27 @@
 				<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 			</div>
 			<!-- SLIDESHOW CODE ENDS -->
+
+			<!-- NOTIFICATIONS -->
+			<?php if (isset($_SESSION['auth'])) { ?>
+
+				<?php 
+					$notifications = mysql_num_rows(mysql_query("SELECT * FROM notifications"));
+					if ($notifications >= 1) {
+						echo '<div class="span3" id="notifications" onclick="location.href=\'admin/notifications.php\'">';
+						echo "<h5>Notification</h5>";
+						echo "$notifications comment need moderation!";
+					}
+				 ?>
+				</div>	
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$('#notifications').fadeIn(1800);
+					});
+					
+				</script>	
+			<?php } ?>
+			<!-- NOTIFICATIONS END -->
 			
 		<?php 
 			$post_query = mysql_query("SELECT * FROM `blog_posts` ORDER BY id DESC LIMIT 10")  or die(error_message("Cannot Connect fetch data from database."));  //this function make query to database, or print error
@@ -47,6 +68,6 @@
 					echo "</div>";
 			}
 			echo "</div";
-			include_once 'assets/includes/_footer.php';
+			// include_once 'assets/includes/_footer.php';
  		?>
  	</div>

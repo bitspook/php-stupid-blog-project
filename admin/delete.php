@@ -16,14 +16,25 @@ include_once "../assets/includes/_header.php";
 		$comment_id = $_GET['comment_id']; //This set $post_id variable, with sanitized data (see sanitize() function in _header)
 
 		$query = mysql_query("DELETE FROM `blog_comments` WHERE `comment_id`='$comment_id'") or die(error_message("Can't Delete Comment. Query Failed",1));
-		header("location:".$_SERVER['HTTP_REFERER']); //this function redirects to the given location
+
+		//clear notifications too
+		if (mysql_numrows(mysql_query("SELECT comment_id FROM notifications WHERE comment_id='$comment_id'"))) {
+			$query = mysql_query("DELETE FROM notifications WHERE comment_id='$comment_id'");
+		}
+		header("location:".$_SERVER['HTTP_REFERER']."#comments"); //this function redirects to the given location
 	}
 	//This block is executed only when a comment is to be approved
 	elseif (isset($_GET['comment_id']) && $_GET['action'] == 'approve') { //Condition to check if comment_id is sent in $_GET
 		$comment_id = sanitize($_GET['comment_id']); //This set $post_id variable, with sanitized data (see sanitize() function in _header)
 
 		$query = mysql_query("UPDATE `blog_comments`  SET `approved`=1 WHERE `comment_id`='$comment_id'") or die(error_message("Can't Approve Comment. Query Failed<br>".mysql_error(),1));
-		header("location:".$_SERVER['HTTP_REFERER']); //this function redirects to the given location
+
+		//clear notifications too
+		if (mysql_numrows(mysql_query("SELECT comment_id FROM notifications WHERE comment_id='$comment_id'"))) {
+			$query = mysql_query("DELETE FROM notifications WHERE comment_id='$comment_id'");
+		}
+
+		header("location:".$_SERVER['HTTP_REFERER']."#".$comment_id); //this function redirects to the given location
 	}
  ?>
 

@@ -2,7 +2,7 @@
  //This file is included in show_blogpost.php file in the end of file. It show the comments for the post, and also present a form for users to make comments. It can't be used by itself as it uses variables declared in show_post.php file.
 
 //Now we'll display comments and add a form to enter new comments
-			echo "<h2>Comments</h2>";
+			echo "<h2 id='comments'>Comments</h2>";
 			echo "<div class='well'>";
 			//this line make a query to get comments from the database
 			$comment_query = mysql_query("SELECT * FROM `blog_comments` WHERE post_id= '$post_id' AND approved") or die(mysql_error()); //it fetches approved comments for present post from database
@@ -31,27 +31,34 @@
 				echo "<p class='comment well'>".nl2br($row['comment'])."</p>";
 				//echo "<p> on ".$row['comment_time']."</p>";
 
+			}
+			
+			//form to post comments
+
 				if (! isset($_SESSION['auth']) && $_GET['moderate_msg'] == 'true') {
 					echo '<div class="alert alert-info" id="alert">
 					    <button type="button" class="close" data-dismiss="alert">×</button>
 					    <strong>Keep Calm!</strong> Your comment is awaiting moderation.
 					    </div>';
 				}
-
-			}
-			
-			//form to post comments
 		echo "<h2>Post a comment</h2>";
 		echo "<div class='well'>";
 		echo "<form action='post_comment.php?ID=".$post_id."' method='post' class='form-vertical'>";
 		?>		<table>
-					<tr><td><label for="commenter_name">Your Name:</label></td>
-						<td><input type=text id="cmnt_name_in" name="commenter_name" value=
-							"<?php
-							//This if block check if user made a comment earlier. If she did, her name is filled in name field automatically
-							 if (isset($_SESSION['commenter_name'])) {
-							echo $_SESSION['commenter_name'];
-							}?>"></td>
+					<tr>
+						<td>
+							<label for="commenter_name">Your Name:</label>
+						</td>
+					<?php if (isset($_SESSION['auth'])) {
+						echo "<td style='font-color:green; font-weight:700;'>Admin</td>"; }
+						else {
+							echo '<td><input type=text id="cmnt_name_in" name="commenter_name" value="';
+							if (isset($_SESSION['commenter_name'])) {
+								echo $_SESSION['commenter_name'];
+							}
+							echo '"></td>';
+						}
+						?>
 					</tr>
 					<tr>
 						<td>Comment</td>
@@ -62,4 +69,3 @@
 			</form>
 			</div>
 		</div>
-

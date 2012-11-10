@@ -80,6 +80,6 @@
 @	$db = mysql_select_db($db_name)  or die(error_message("Cannot connect with Database", 0));
 	
 
-		include_once 'assets/includes/_sidebar.php';
+@		include_once 'assets/includes/_sidebar.php';
 	
 	 ?>

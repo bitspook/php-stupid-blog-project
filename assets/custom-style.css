@@ -131,10 +131,33 @@ pre {
   resize: none;
 }
 
+h3.admin{
+  color:green;
+}
+
+#notifications {
+  display: none;
+  background-color: rgba(43,43,43,0.75);
+  color: #60CAF5;
+  position: fixed;
+  right: 15em;
+  top: 10%;
+  height: auto;
+  padding: 2px 0 5px 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor:pointer;
+  /*box-shadow: 0px 0px 5px #45D3F9;*/
+  border: 1px dotted #45D3F9;
+}
+#notifications h5{
+  margin-bottom: 0;
+  color: #FFFFFF;
+}
 .sidebar {
   background-color: #2B2B2B;
   color: #FFFFFF;
-  position: fixed;
+  position: absolute;
   right: 0em;
   top: 28%;
   height: auto;
@@ -142,6 +165,10 @@ pre {
   border-radius: 10px 0 0 10px;
   overflow: hidden;
   /*box-shadow: 1px 0.1em 5em #1D2B19;*/
+}
+
+.top-posts li a{
+  text-decoration: none;
 }
 
 .top-posts {
