@@ -53,10 +53,12 @@
 					</div>	
 
 					<div id="notification-dropdown">
-						<a href="admin/notifications.php" class='btn btn-info'><?php echo $notifications;
+						<p onclick=(location.href="admin/notifications.php")>
+							<i class="icon-flag icon-white"></i>
+							<?php echo $notifications;
 							if ($notifications > 1) echo " Notifications";
 							else echo " Notification";
-						 ?></a>
+						 ?></p>
 
 					</div>
 
@@ -65,7 +67,7 @@
 				 ?>
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
-						$('#notifications').fadeIn(1800).delay(5000).fadeOut(1800, function(){
+						$('#notifications').fadeIn(1800).delay(2000).fadeOut(1800, function(){
 							$('#notification-dropdown').slideDown('slow');
 						});
 					});
@@ -79,12 +81,13 @@
 
 			$author = "Admin";
 			while ($post = mysql_fetch_assoc($post_query)) {
-					echo "<div class='post blue-well'>";
+					echo "<div class='post well'>";
 					echo "<h1><a href='show_blogpost.php?ID=".$post['id']."'>".$post['title']."</a></h1>";
 					echo "<p>".substr(($post['post']), 0, 450)."<b>...</b></p>";
 					echo "<p><a href='show_blogpost.php?ID=".$post['id']."'> Read More</a><br>";
-					echo "<span class='footer'>Posted By: ".$author."  &#9618; Last Updated: ".$post['date_posted']."</span><br><br><br>"; //." Tags: ". $post->tags
-					echo "</div>";
+					echo "<span class='footer'>Posted By: ".$author."  &#9618; Last Updated: ".$post['date_posted']."  &#9618; "; //." Tags: ". $post->tags
+					echo '<span class="btn" id="counter">'.$post['likes'].' likes</span>';
+					echo "</span><br><br><br></div>";
 			}
 			echo "</div";
 			// include_once 'assets/includes/_footer.php';

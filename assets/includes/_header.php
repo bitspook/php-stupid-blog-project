@@ -71,7 +71,8 @@
 	}
 
 	//THIS BLOCK SETUP DATABASE CONNECTION
-
+	//Also update db settings in likes.php
+	
 	$db_username = "root";
 	$db_password = "root";
 	$db_name = "blog";

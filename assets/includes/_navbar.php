@@ -25,7 +25,7 @@ function create_link($link){
 						>Stupid Blog</a>
 						<div class="nav-collapse">
 							<ul class="nav">
-								<li ><a href = "<?php create_link('index.php');?>";>Home</a>
+								<li ><a href = "<?php create_link('index.php');?>";><i class="icon-home icon-white"></i> Home</a>
 								</li>
 								<li ><a href='<?php create_link('categories.php');?>';>Index</a>
 								</li>

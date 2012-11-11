@@ -163,12 +163,15 @@ h3.admin{
 }
 #notification-dropdown{
   display: none;
-  position: absolute;
+  position: fixed;
   top: 38px;
   right: 4em;
-  background: #fff;
-  border-radius: 0 4px 4px 0;
-  padding: 4px;
+  color: #EAE9EE;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 10px 2px 10px;
+  background: #222;
+  text-shadow: 0 0 2px #000;
 }
 #notification-dropdown .btn{
   padding: 2px 5px 2px 5px;
@@ -178,13 +181,28 @@ h3.admin{
   background-color: #2B2B2B;
   color: #FFFFFF;
   position: absolute;
-  right: 0em;
-  top: 50%;
+  right: 4em;
+  top: 400px;
   height: auto;
   padding: 5px 20px 5px 5px;
   border-radius: 10px; /* 0 0 10px; */
   overflow: hidden;
   /*box-shadow: 1px 0.1em 5em #1D2B19;*/
+}
+
+#like{
+  position: absolute;
+  height: auto;
+  width: auto;
+  margin: 0;
+  top: 170px;
+  left: 15px;
+}
+#like-btn{
+  cursor: pointer;
+}
+#like input{
+  padding-left: 3px;
 }
 
 .top-posts li a{
