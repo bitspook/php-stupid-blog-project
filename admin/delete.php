@@ -7,7 +7,10 @@ include_once "../assets/includes/_header.php";
 	if(isset($_GET['post_id'])) { //This condition check if a post_id is sent in $_GET variable
 		$post_id = sanitize($_GET['post_id']);  //This set $post_id variable, with sanitized data (see sanitize() function in _header)
 
-		$query = mysql_query("DELETE FROM `blog_posts` WHERE `id`='$post_id'") or die(error_message("Can't Delete Post. Query Failed",1));  //This line makes a delete query to database
+		$delete_post = mysql_query("DELETE FROM `blog_posts` WHERE `id`='$post_id'") or die(error_message("Can't Delete Post. Query Failed",1));
+		$delete_comments = mysql_query("DELETE FROM blog_comments WHERE post_id='$post_id'") or die(error_message(mysql_error()));
+		$delete_notifications = mysql_query("DELETE FROM notifications WHERE post_id='$post_id'") or die(error_message(mysql_error()));
+
 		header("location:../index.php");  //this function redirects to the given location
 	}
 
