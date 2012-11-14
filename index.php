@@ -38,7 +38,7 @@
 			<?php if (isset($_SESSION['auth'])) { ?>
 
 				<?php 
-					$notifications = mysql_num_rows(mysql_query("SELECT * FROM notifications"));
+					$notifications = mysql_num_rows(mysql_query("SELECT * FROM blog_comments WHERE approved=0"));
 
 					if ($notifications >= 1) {
 						echo '<div class="span3" id="notifications" onclick="location.href=\'admin/notifications.php\'">';

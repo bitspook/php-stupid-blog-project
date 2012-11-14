@@ -2,19 +2,6 @@
 	ob_start();  //a workaround to make redirects work. It starts output buffering, sending all data including location header in same chunk, so no headers-already-sent error
 	include_once 'assets/includes/_header.php';
 
-
-	//function to send notifications when new comment is added
-	function send_notification($commenter_name, $comment_id, $post_id){
-		$post_title = mysql_fetch_row(mysql_query("SELECT title FROM blog_posts WHERE id='$post_id'"))[0];
-		$comment = mysql_fetch_row(mysql_query("SELECT comment FROM blog_comments WHERE comment_id='$comment_id'"))[0];
-
-		$notification = '<b>'.$commenter_name.'</b> commented on '.'<a href="/show_blogpost.php?ID='.$post_id.'#comments">'.$post_title.'</a>';
-		$notification_msg = $comment;
-
-		$notification_query = mysql_query("INSERT INTO `notifications` (`notification`, `notification_msg`, `post_id`, `comment_id`) VALUES ('$notification', '$notification_msg', '$post_id', '$comment_id')");
-	}
-	
-
 	//THIS FILE SEND COMMENTS TO DATABASE. IT GET INPUT FROM BLOG_COMMENTS.PHP FILE AND SEND THE ENTERED DATA TO DATABASE
 
 	$post_id = sanitize($_REQUEST['ID']);		//set variables with sanitized data
@@ -44,10 +31,6 @@
 			$query = mysql_query("INSERT INTO blog_comments (name, comment, post_id) VALUES ('$commenter_name', '$comment', '$post_id')") or die(error_message(mysql_error())); //query to put comment data in blog_comments field in database
 
 			$comment_id = mysql_insert_id($connection);	//set comment_id to last inserted comment_id in database
-
-			send_notification($commenter_name, $comment_id, $post_id);
-
-
 		}
 	}
 	else die(error_message("You have not entered complete data.",1));

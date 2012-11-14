@@ -9,7 +9,6 @@ include_once "../assets/includes/_header.php";
 
 		$delete_post = mysql_query("DELETE FROM `blog_posts` WHERE `id`='$post_id'") or die(error_message("Can't Delete Post. Query Failed",1));
 		$delete_comments = mysql_query("DELETE FROM blog_comments WHERE post_id='$post_id'") or die(error_message(mysql_error()));
-		$delete_notifications = mysql_query("DELETE FROM notifications WHERE post_id='$post_id'") or die(error_message(mysql_error()));
 
 		header("location:../index.php");  //this function redirects to the given location
 	}
@@ -19,10 +18,6 @@ include_once "../assets/includes/_header.php";
 		$comment_id = $_GET['comment_id']; //This set $post_id variable, with sanitized data (see sanitize() function in _header)
 
 		$query = mysql_query("DELETE FROM `blog_comments` WHERE `comment_id`='$comment_id'") or die(error_message("Can't Delete Comment. Query Failed",1));
-
-		//clear notifications too
-		if (mysql_numrows(mysql_query("SELECT comment_id FROM notifications WHERE comment_id='$comment_id'"))) {
-			$query = mysql_query("DELETE FROM notifications WHERE comment_id='$comment_id'");
 		}
 		header("location:".$_SERVER['HTTP_REFERER']."#comments"); //this function redirects to the given location
 	}
@@ -31,10 +26,6 @@ include_once "../assets/includes/_header.php";
 		$comment_id = sanitize($_GET['comment_id']); //This set $post_id variable, with sanitized data (see sanitize() function in _header)
 
 		$query = mysql_query("UPDATE `blog_comments`  SET `approved`=1 WHERE `comment_id`='$comment_id'") or die(error_message("Can't Approve Comment. Query Failed<br>".mysql_error(),1));
-
-		//clear notifications too
-		if (mysql_numrows(mysql_query("SELECT comment_id FROM notifications WHERE comment_id='$comment_id'"))) {
-			$query = mysql_query("DELETE FROM notifications WHERE comment_id='$comment_id'");
 		}
 
 		header("location:".$_SERVER['HTTP_REFERER']."#".$comment_id); //this function redirects to the given location
