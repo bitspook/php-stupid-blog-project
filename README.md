@@ -8,12 +8,12 @@ To set it up on your machine, do this.
 
 *	Clone this repository or download as zip (see that "ZIP" button up there?)
 *	If on Windows (then I suppose you are using wamp), extract the zip file in C:/wamp/www directory.
-*	If on Linux, then I assume you to be smart enough to know what to do.
+*	If on Linux, then I assume you to be smart enough to know what to do (or check here for [configuring apache/mysql/php on linux](http://channikhabra.blogspot.in/2012/06/setting-up-you-own-home-lamp-machine.html).
 *	Create a new Mysql database. 
 	*	If using PhpMyAdmin, create new database by clicking on the link given in right sidebar (name it "blog" for convenience)
 *	Import blog.sql file in newly created database (click "Import" link on topbar of PhpMyAdmin)
-*	Change database name, and db username and password in 'blog/includes/_header.php' file.
+*	Change database name, and db username and password in '/includes/_header.php' file and in '/likes.php file.
 	*	$db_usename and $db_password for username and password respectively and $db_name for name of database itself.
 	*	If you are using wamp, default database username is "root" and password is blank. So set $db_password = ""
-*	Run wamp (or apache or whatever) and browse to the "blog" dir
+*	Run wamp (or apache or php inbuilt server or whatever) and browse to the "blog" dir
 *	You are up and running
